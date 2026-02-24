@@ -134,12 +134,15 @@
     <footer class="border-t border-white/10 py-6 text-center text-sm text-slate-400" data-i18n="footer">© 2026 FlowRD AI · Operación comercial para República Dominicana.</footer>
 
     <script>
-      const CONFIG = {
+      const DEFAULT_CONFIG = {
         whatsappNumber: '18095551234',
         calendlyUrl: 'https://calendly.com/flowrd/demo-comercial',
         sheetsWebhookUrl: 'https://script.google.com/macros/s/TU_SCRIPT_ID/exec',
         emailNotify: 'ventas@flowrd.ai',
       };
+      // Opcional: sobreescribe sin editar el código fuente
+      // <script>window.__FLOWRD_CONFIG__ = { whatsappNumber:'1809...', calendlyUrl:'https://...', sheetsWebhookUrl:'https://...', emailNotify:'...' };</script>
+      const CONFIG = { ...DEFAULT_CONFIG, ...(window.__FLOWRD_CONFIG__ || {}) };
 
       const i18n = {
         es: {
