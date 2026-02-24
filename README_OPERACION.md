@@ -24,3 +24,10 @@ Edita el objeto `CONFIG` en `index.html`:
 
 ## Nota
 Si `sheetsWebhookUrl` sigue con `TU_SCRIPT_ID`, el formulario igual guarda en `localStorage` para no perder datos.
+
+
+## Checklist 48 horas (ejecución)
+1. Configurar valores reales en `CONFIG` (`whatsappNumber`, `calendlyUrl`, `sheetsWebhookUrl`, `emailNotify`).
+2. Publicar Apps Script Web App y pegar URL real en `sheetsWebhookUrl`.
+3. Probar alta end-to-end: formulario → Sheets (`status=nuevo`) → WhatsApp prellenado.
+4. Iniciar outreach el mismo día con tracking UTM (`utm_source`, `utm_medium`, `utm_campaign`).

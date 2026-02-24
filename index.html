@@ -76,6 +76,10 @@
               <div><label class="text-sm" data-i18n="city">Ciudad</label><input name="ciudad" required class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2" /></div>
               <div><label class="text-sm" data-i18n="phone">Teléfono</label><input name="telefono" required class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2" /></div>
             </div>
+            <input type="hidden" name="utm_source" id="utm_source" />
+            <input type="hidden" name="utm_medium" id="utm_medium" />
+            <input type="hidden" name="utm_campaign" id="utm_campaign" />
+            <input type="hidden" name="source" id="source" value="landing-flowrd" />
             <div class="grid gap-3 sm:grid-cols-2">
               <button type="submit" class="rounded-full bg-mint px-6 py-3 font-black text-black" data-i18n="submit">Enviar y abrir WhatsApp</button>
               <a id="waDirectBtn" href="#" class="rounded-full border border-white/30 px-6 py-3 text-center font-semibold" data-i18n="direct_wa">WhatsApp directo</a>
@@ -88,8 +92,10 @@
           <p class="mt-2 text-slate-200" data-i18n="cal_desc">El cliente puede reservar llamada en un click.</p>
           <div class="mt-4 flex flex-wrap gap-3">
             <a id="calBtn" target="_blank" rel="noopener noreferrer" class="rounded-full bg-white px-6 py-3 font-bold text-black" data-i18n="open_cal">Abrir Calendly</a>
+            <button id="copyCalBtn" type="button" class="rounded-full border border-white/30 px-6 py-3 font-semibold" data-i18n="copy_cal">Copiar enlace</button>
             <a href="#" id="calText" class="text-xs text-mint underline"></a>
           </div>
+          <p id="copyStatus" class="mt-2 text-xs text-slate-300"></p>
           <div class="mt-5 rounded-xl border border-white/20 bg-white/5 p-4">
             <p class="text-sm font-semibold" data-i18n="lead_status_title">Estado inicial del lead:</p>
             <p class="text-sm text-mint" data-i18n="lead_status_new">nuevo</p>
@@ -137,10 +143,10 @@
 
       const i18n = {
         es: {
-          nav_offer:'Oferta',nav_capture:'Captura',nav_conversion:'Conversión',nav_automation:'Automatización',nav_demo:'Agendar demo',badge:'Listo para vender (Sprint 1)',hero_title:'De landing bonita a máquina de captura + cierre',hero_desc:'FlowRD AI ahora está preparado para operación real: WhatsApp productivo, Calendly real, leads sincronizados y seguimiento comercial.',hero_cta_1:'Probar captura real',hero_cta_2:'Ver conversión',config_title:'Configuración de producción',config_note:'Puedes editar estos valores en el objeto CONFIG del script para lanzar hoy mismo.',capture_title:'Sprint 2: Captura y seguimiento',capture_desc:'Formulario conectado a Google Sheets (Apps Script). Guarda lead + estado inicial y abre WhatsApp prellenado.',name:'Nombre',business:'Negocio',city:'Ciudad',phone:'Teléfono',submit:'Enviar y abrir WhatsApp',direct_wa:'WhatsApp directo',cal_title:'Agenda de demo (Calendly)',cal_desc:'El cliente puede reservar llamada en un click.',open_cal:'Abrir Calendly',lead_status_title:'Estado inicial del lead:',lead_status_new:'nuevo',lead_status_note:'Luego podrá pasar a: contactado, demo, cerrado.',conv_title:'Sprint 3: Conversión comercial',case1_t:'Caso real #1',case1_d:'Clínica estética: -32% no-show y +18 citas en 14 días.',case2_t:'Caso real #2',case2_d:'Barbería premium: +41 leads recuperados y agenda más estable.',trial_t:'Prueba 7 vs 15 días',trial_d:'7 días estándar. 15 días solo para procesos lentos o aprobación gerencial.',niche_cta:'CTA por nicho:',cta_clinic:'Clínicas',cta_barber:'Barberías',cta_realty:'Inmobiliarias',auto_title:'Sprint 4: Automatización inicial',auto1_t:'Plantillas por nicho',auto1_d:'Flujos para clínica, barbería e inmobiliaria.',auto2_t:'Flujo base',auto2_d:'Pregunta → calificación → cita.',auto3_t:'Reporte semanal',auto3_d:'Tiempo de respuesta, leads recuperados, citas generadas.',footer:'© 2026 FlowRD AI · Operación comercial para República Dominicana.',fill_all:'Completa todos los campos para continuar.',saved_ok:'Lead capturado y enviado. Abriendo WhatsApp...',saved_fail:'Lead capturado localmente. Falló envío a Sheets (revisa webhook).',cfg_ok:'configurado',cfg_pending:'pendiente configurar',cfg_bad_wa:'WhatsApp inválido (debe tener 11+ dígitos).',cfg_bad_cal:'Calendly URL inválida.',cfg_bad_webhook:'Webhook de Sheets inválido.',
+          nav_offer:'Oferta',nav_capture:'Captura',nav_conversion:'Conversión',nav_automation:'Automatización',nav_demo:'Agendar demo',badge:'Listo para vender (Sprint 1)',hero_title:'De landing bonita a máquina de captura + cierre',hero_desc:'FlowRD AI ahora está preparado para operación real: WhatsApp productivo, Calendly real, leads sincronizados y seguimiento comercial.',hero_cta_1:'Probar captura real',hero_cta_2:'Ver conversión',config_title:'Configuración de producción',config_note:'Puedes editar estos valores en el objeto CONFIG del script para lanzar hoy mismo.',capture_title:'Sprint 2: Captura y seguimiento',capture_desc:'Formulario conectado a Google Sheets (Apps Script). Guarda lead + estado inicial y abre WhatsApp prellenado.',name:'Nombre',business:'Negocio',city:'Ciudad',phone:'Teléfono',submit:'Enviar y abrir WhatsApp',direct_wa:'WhatsApp directo',cal_title:'Agenda de demo (Calendly)',cal_desc:'El cliente puede reservar llamada en un click.',open_cal:'Abrir Calendly',copy_cal:'Copiar enlace',lead_status_title:'Estado inicial del lead:',lead_status_new:'nuevo',lead_status_note:'Luego podrá pasar a: contactado, demo, cerrado.',conv_title:'Sprint 3: Conversión comercial',case1_t:'Caso real #1',case1_d:'Clínica estética: -32% no-show y +18 citas en 14 días.',case2_t:'Caso real #2',case2_d:'Barbería premium: +41 leads recuperados y agenda más estable.',trial_t:'Prueba 7 vs 15 días',trial_d:'7 días estándar. 15 días solo para procesos lentos o aprobación gerencial.',niche_cta:'CTA por nicho:',cta_clinic:'Clínicas',cta_barber:'Barberías',cta_realty:'Inmobiliarias',auto_title:'Sprint 4: Automatización inicial',auto1_t:'Plantillas por nicho',auto1_d:'Flujos para clínica, barbería e inmobiliaria.',auto2_t:'Flujo base',auto2_d:'Pregunta → calificación → cita.',auto3_t:'Reporte semanal',auto3_d:'Tiempo de respuesta, leads recuperados, citas generadas.',footer:'© 2026 FlowRD AI · Operación comercial para República Dominicana.',fill_all:'Completa todos los campos para continuar.',saved_ok:'Lead capturado y enviado. Abriendo WhatsApp...',saved_fail:'Lead capturado localmente. Falló envío a Sheets (revisa webhook).',phone_invalid:'Teléfono inválido RD. Usa 8, 10 u 11 dígitos válidos.',webhook_http:'Webhook respondió error',copy_ok:'Enlace de Calendly copiado.',copy_fail:'No se pudo copiar el enlace.',cfg_ok:'configurado',cfg_pending:'pendiente configurar',cfg_bad_wa:'WhatsApp inválido (debe tener 11+ dígitos).',cfg_bad_cal:'Calendly URL inválida.',cfg_bad_webhook:'Webhook de Sheets inválido.',
         },
         en: {
-          nav_offer:'Offer',nav_capture:'Capture',nav_conversion:'Conversion',nav_automation:'Automation',nav_demo:'Book demo',badge:'Ready to sell (Sprint 1)',hero_title:'From pretty landing page to capture + closing machine',hero_desc:'FlowRD AI is now ready for real operations: production WhatsApp, real Calendly, synced leads, and commercial follow-up.',hero_cta_1:'Test real capture',hero_cta_2:'See conversion',config_title:'Production configuration',config_note:'Edit these values in CONFIG to launch today.',capture_title:'Sprint 2: Capture and follow-up',capture_desc:'Form connected to Google Sheets (Apps Script). Saves lead + initial status and opens prefilled WhatsApp.',name:'Name',business:'Business',city:'City',phone:'Phone',submit:'Send and open WhatsApp',direct_wa:'Direct WhatsApp',cal_title:'Demo scheduling (Calendly)',cal_desc:'Client can book a call in one click.',open_cal:'Open Calendly',lead_status_title:'Initial lead status:',lead_status_new:'new',lead_status_note:'Then it can move to: contacted, demo, closed.',conv_title:'Sprint 3: Commercial conversion',case1_t:'Real case #1',case1_d:'Aesthetic clinic: -32% no-show and +18 appointments in 14 days.',case2_t:'Real case #2',case2_d:'Premium barbershop: +41 recovered leads and more stable schedule.',trial_t:'7 vs 15 day trial',trial_d:'7 days by default. 15 days only for slower processes or management approval.',niche_cta:'Secondary CTA by niche:',cta_clinic:'Clinics',cta_barber:'Barbershops',cta_realty:'Real estate',auto_title:'Sprint 4: Initial automation',auto1_t:'Niche templates',auto1_d:'Flows for clinic, barbershop and real estate.',auto2_t:'Base flow',auto2_d:'Question → qualification → appointment.',auto3_t:'Weekly report',auto3_d:'Response time, recovered leads, generated appointments.',footer:'© 2026 FlowRD AI · Commercial operation for Dominican Republic.',fill_all:'Complete all fields to continue.',saved_ok:'Lead captured and sent. Opening WhatsApp...',saved_fail:'Lead captured locally. Sheets sync failed (check webhook).',cfg_ok:'configured',cfg_pending:'pending setup',cfg_bad_wa:'Invalid WhatsApp (must have 11+ digits).',cfg_bad_cal:'Invalid Calendly URL.',cfg_bad_webhook:'Invalid Sheets webhook URL.',
+          nav_offer:'Offer',nav_capture:'Capture',nav_conversion:'Conversion',nav_automation:'Automation',nav_demo:'Book demo',badge:'Ready to sell (Sprint 1)',hero_title:'From pretty landing page to capture + closing machine',hero_desc:'FlowRD AI is now ready for real operations: production WhatsApp, real Calendly, synced leads, and commercial follow-up.',hero_cta_1:'Test real capture',hero_cta_2:'See conversion',config_title:'Production configuration',config_note:'Edit these values in CONFIG to launch today.',capture_title:'Sprint 2: Capture and follow-up',capture_desc:'Form connected to Google Sheets (Apps Script). Saves lead + initial status and opens prefilled WhatsApp.',name:'Name',business:'Business',city:'City',phone:'Phone',submit:'Send and open WhatsApp',direct_wa:'Direct WhatsApp',cal_title:'Demo scheduling (Calendly)',cal_desc:'Client can book a call in one click.',open_cal:'Open Calendly',copy_cal:'Copy link',lead_status_title:'Initial lead status:',lead_status_new:'new',lead_status_note:'Then it can move to: contacted, demo, closed.',conv_title:'Sprint 3: Commercial conversion',case1_t:'Real case #1',case1_d:'Aesthetic clinic: -32% no-show and +18 appointments in 14 days.',case2_t:'Real case #2',case2_d:'Premium barbershop: +41 recovered leads and more stable schedule.',trial_t:'7 vs 15 day trial',trial_d:'7 days by default. 15 days only for slower processes or management approval.',niche_cta:'Secondary CTA by niche:',cta_clinic:'Clinics',cta_barber:'Barbershops',cta_realty:'Real estate',auto_title:'Sprint 4: Initial automation',auto1_t:'Niche templates',auto1_d:'Flows for clinic, barbershop and real estate.',auto2_t:'Base flow',auto2_d:'Question → qualification → appointment.',auto3_t:'Weekly report',auto3_d:'Response time, recovered leads, generated appointments.',footer:'© 2026 FlowRD AI · Commercial operation for Dominican Republic.',fill_all:'Complete all fields to continue.',saved_ok:'Lead captured and sent. Opening WhatsApp...',saved_fail:'Lead captured locally. Sheets sync failed (check webhook).',phone_invalid:'Invalid DR phone. Use valid 8, 10 or 11 digits.',webhook_http:'Webhook returned error',copy_ok:'Calendly link copied.',copy_fail:'Could not copy Calendly link.',cfg_ok:'configured',cfg_pending:'pending setup',cfg_bad_wa:'Invalid WhatsApp (must have 11+ digits).',cfg_bad_cal:'Invalid Calendly URL.',cfg_bad_webhook:'Invalid Sheets webhook URL.',
         },
       };
 
@@ -197,6 +203,33 @@
 
       const leadForm = document.getElementById('leadForm');
       const formStatus = document.getElementById('formStatus');
+      const copyCalBtn = document.getElementById('copyCalBtn');
+      const copyStatus = document.getElementById('copyStatus');
+
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById('utm_source').value = params.get('utm_source') || '';
+      document.getElementById('utm_medium').value = params.get('utm_medium') || '';
+      document.getElementById('utm_campaign').value = params.get('utm_campaign') || '';
+      if (!document.getElementById('utm_source').value) document.getElementById('utm_source').value = 'direct';
+
+      const normalizePhone = (raw) => String(raw || '').replace(/\D/g, '');
+      const isValidRDPhone = (raw) => {
+        const n = normalizePhone(raw);
+        if (n.length === 8) return true;
+        if (n.length === 10 && /^8\d{9}$/.test(n)) return true;
+        if (n.length === 11 && /^1?8\d{9}$/.test(n)) return true;
+        return false;
+      };
+
+      copyCalBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(CONFIG.calendlyUrl);
+          copyStatus.textContent = i18n[currentLang].copy_ok;
+        } catch {
+          copyStatus.textContent = i18n[currentLang].copy_fail;
+        }
+      });
+
       leadForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         const data = new FormData(leadForm);
@@ -204,16 +237,23 @@
           nombre: String(data.get('nombre') || '').trim(),
           negocio: String(data.get('negocio') || '').trim(),
           ciudad: String(data.get('ciudad') || '').trim(),
-          telefono: String(data.get('telefono') || '').trim(),
+          telefono: normalizePhone(data.get('telefono') || ''),
           status: 'nuevo',
           lang: currentLang,
-          source: 'landing-flowrd',
+          source: String(data.get('source') || 'landing-flowrd'),
+          utm_source: String(data.get('utm_source') || ''),
+          utm_medium: String(data.get('utm_medium') || ''),
+          utm_campaign: String(data.get('utm_campaign') || ''),
           createdAt: new Date().toISOString(),
           notifyEmail: CONFIG.emailNotify,
         };
 
         if (!payload.nombre || !payload.negocio || !payload.ciudad || !payload.telefono) {
           formStatus.textContent = i18n[currentLang].fill_all;
+          return;
+        }
+        if (!isValidRDPhone(payload.telefono)) {
+          formStatus.textContent = i18n[currentLang].phone_invalid;
           return;
         }
 
@@ -228,13 +268,19 @@
 
         try {
           if (!CONFIG.sheetsWebhookUrl.includes('TU_SCRIPT_ID')) {
-            await fetch(CONFIG.sheetsWebhookUrl, {
+            const resp = await fetch(CONFIG.sheetsWebhookUrl, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(payload),
             });
+            if (!resp.ok) {
+              formStatus.textContent = `${i18n[currentLang].webhook_http} ${resp.status}`;
+            } else {
+              formStatus.textContent = i18n[currentLang].saved_ok;
+            }
+          } else {
+            formStatus.textContent = i18n[currentLang].saved_ok;
           }
-          formStatus.textContent = i18n[currentLang].saved_ok;
         } catch {
           formStatus.textContent = i18n[currentLang].saved_fail;
         }
