@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlowRD AI | Sistema moderno 2025/2026 para ventas por WhatsApp</title>
+    <title>FlowRD AI | Landing moderna 2025/2026 para República Dominicana</title>
     <meta
       name="description"
-      content="Landing moderna 2025/2026 para República Dominicana: automatización de WhatsApp, citas, seguimiento, analítica y crecimiento comercial."
+      content="Sistema comercial moderno para RD: WhatsApp automation, agenda inteligente, seguimiento, dashboard y ROI en RD$."
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,33 +14,29 @@
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            },
             colors: {
-              bgNight: '#040712',
-              bgCard: '#0b1228',
-              mint: '#2ff7c4',
-              electric: '#6ea8ff',
-              violet: '#8a6bff',
+              midnight: '#050816',
+              mint: '#2EF7C3',
+              sky: '#6AA8FF',
+              lilac: '#8A6BFF',
             },
             boxShadow: {
-              neon: '0 0 32px rgba(47, 247, 196, .32)',
-              deep: '0 28px 60px rgba(2, 6, 23, .52)',
+              neon: '0 0 34px rgba(46, 247, 195, 0.35)',
+              panel: '0 28px 60px rgba(2, 6, 23, 0.5)',
             },
             keyframes: {
-              drift: {
-                '0%,100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-14px)' },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-12px)' },
               },
-              breathe: {
-                '0%,100%': { opacity: '.35' },
+              pulseSoft: {
+                '0%, 100%': { opacity: '.35' },
                 '50%': { opacity: '.85' },
               },
             },
             animation: {
-              drift: 'drift 8s ease-in-out infinite',
-              breathe: 'breathe 4s ease-in-out infinite',
+              float: 'float 7.5s ease-in-out infinite',
+              pulseSoft: 'pulseSoft 4s ease-in-out infinite',
             },
           },
         },
@@ -48,234 +44,204 @@
     </script>
 
     <style>
-      :root { color-scheme: dark; }
       body {
         background:
-          radial-gradient(circle at 7% 10%, #16295b 0%, transparent 30%),
-          radial-gradient(circle at 90% 20%, #3b2a7d 0%, transparent 25%),
-          linear-gradient(180deg, #070b19 0%, #040712 100%);
+          radial-gradient(circle at 10% 10%, #193268 0%, transparent 28%),
+          radial-gradient(circle at 86% 16%, #3d2e80 0%, transparent 24%),
+          linear-gradient(180deg, #070b1d 0%, #050816 100%);
       }
       .glass {
-        background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
-        border: 1px solid rgba(255,255,255,.14);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
         backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.16);
       }
       .reveal {
         opacity: 0;
-        transform: translateY(24px) scale(.985);
-        transition: opacity .7s ease, transform .7s ease;
+        transform: translateY(22px) scale(0.985);
+        transition: opacity 0.7s ease, transform 0.7s ease;
       }
       .reveal.visible {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
-      .grid-noise::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        opacity: .06;
-        background-image: radial-gradient(circle, white 1px, transparent 1px);
-        background-size: 7px 7px;
+      .ticker {
+        mask-image: linear-gradient(to right, transparent, white 12%, white 88%, transparent);
+      }
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: slide 18s linear infinite;
+      }
+      @keyframes slide {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
       }
       @media (prefers-reduced-motion: reduce) {
         .reveal { opacity: 1; transform: none; transition: none; }
+        .ticker-track { animation: none; }
       }
     </style>
   </head>
-
-  <body class="font-sans text-white antialiased selection:bg-mint selection:text-black">
-    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div class="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-electric/30 blur-3xl animate-breathe"></div>
-      <div class="absolute right-0 top-40 h-80 w-80 rounded-full bg-violet/35 blur-3xl animate-drift"></div>
-      <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-mint/20 blur-3xl animate-breathe"></div>
+  <body class="text-white antialiased selection:bg-mint selection:text-black">
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div class="absolute -top-20 -left-16 h-72 w-72 rounded-full bg-sky/30 blur-3xl animate-pulseSoft"></div>
+      <div class="absolute top-1/3 -right-14 h-80 w-80 rounded-full bg-lilac/30 blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-mint/20 blur-3xl animate-pulseSoft"></div>
     </div>
 
     <header class="sticky top-0 z-50 border-b border-white/10 bg-black/35 backdrop-blur-xl">
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" class="text-lg font-black tracking-tight">FlowRD <span class="text-mint">AI</span></a>
+        <a href="#" class="text-lg font-black">FlowRD <span class="text-mint">AI</span></a>
         <div class="hidden items-center gap-5 text-sm text-slate-200 md:flex">
-          <a href="#producto" class="hover:text-mint">Producto</a>
-          <a href="#modulos" class="hover:text-mint">Módulos</a>
-          <a href="#precios" class="hover:text-mint">Precios</a>
+          <a href="#solucion" class="hover:text-mint">Solución</a>
+          <a href="#features" class="hover:text-mint">Features</a>
+          <a href="#pricing" class="hover:text-mint">Pricing</a>
           <a href="#faq" class="hover:text-mint">FAQ</a>
         </div>
-        <a href="#contacto" class="rounded-full bg-mint px-5 py-2 text-sm font-black text-black transition hover:scale-105">Demo gratis</a>
+        <a href="#contacto" class="rounded-full bg-mint px-5 py-2 text-sm font-black text-black hover:scale-105 transition">Agendar demo</a>
       </nav>
     </header>
 
     <main class="mx-auto max-w-7xl px-6 pb-24 pt-10">
-      <section class="grid items-center gap-10 lg:grid-cols-2">
+      <section class="grid gap-10 lg:grid-cols-2 items-center">
         <div class="reveal space-y-6">
-          <span class="inline-flex rounded-full border border-mint/40 bg-mint/10 px-4 py-1 text-xs font-bold uppercase tracking-[.2em] text-mint">Diseño moderno 2025/2026</span>
+          <span class="inline-flex rounded-full border border-mint/40 bg-mint/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-mint">Versión más completa 2025/2026</span>
           <h1 class="text-4xl font-black leading-tight md:text-6xl">
-            Tu negocio en RD con
-            <span class="bg-gradient-to-r from-mint to-electric bg-clip-text text-transparent">automatización real de ventas</span>
+            Automatiza ventas por WhatsApp y
+            <span class="bg-gradient-to-r from-mint to-sky bg-clip-text text-transparent">convierte más clientes en RD</span>
           </h1>
           <p class="max-w-xl text-lg text-slate-200">
-            Responde WhatsApp al instante, agenda citas automáticamente, recupera leads fríos y mide ingresos en un panel simple.
-            Hecho para clínicas, salones, barbers, inmobiliarias y servicios en República Dominicana.
+            Deja de perder leads por respuesta tardía. FlowRD AI centraliza captación, agenda, seguimiento y reportes en una experiencia moderna que sí cierra ventas.
           </p>
-
           <div class="flex flex-wrap gap-3">
-            <a href="#precios" class="rounded-full bg-mint px-7 py-3 font-black text-black shadow-neon transition hover:scale-105">Ver precios</a>
-            <a href="#calculadora" class="rounded-full border border-white/30 px-7 py-3 font-semibold transition hover:border-mint hover:text-mint">Calcular retorno</a>
+            <a href="#pricing" class="rounded-full bg-mint px-7 py-3 font-black text-black shadow-neon hover:scale-105 transition">Ver planes</a>
+            <a href="#roi" class="rounded-full border border-white/30 px-7 py-3 font-semibold hover:border-mint hover:text-mint transition">Simular ROI</a>
           </div>
-
           <div class="grid max-w-xl grid-cols-3 gap-3 text-center text-xs">
-            <div class="rounded-xl border border-white/15 bg-white/5 p-3">
-              <p class="counter text-xl font-black text-mint" data-target="180">0</p>
-              <p class="text-slate-300">clientes activos</p>
-            </div>
-            <div class="rounded-xl border border-white/15 bg-white/5 p-3">
-              <p class="counter text-xl font-black text-mint" data-target="42">0</p>
-              <p class="text-slate-300">% menos no-show</p>
-            </div>
-            <div class="rounded-xl border border-white/15 bg-white/5 p-3">
-              <p class="counter text-xl font-black text-mint" data-target="5">0</p>
-              <p class="text-slate-300">días de arranque</p>
-            </div>
+            <div class="rounded-xl border border-white/15 bg-white/5 p-3"><p class="counter text-xl font-black text-mint" data-target="220">0</p><p class="text-slate-300">cuentas activas</p></div>
+            <div class="rounded-xl border border-white/15 bg-white/5 p-3"><p class="counter text-xl font-black text-mint" data-target="47">0</p><p class="text-slate-300">% más conversión</p></div>
+            <div class="rounded-xl border border-white/15 bg-white/5 p-3"><p class="counter text-xl font-black text-mint" data-target="4">0</p><p class="text-slate-300">días de setup</p></div>
           </div>
         </div>
 
-        <aside class="reveal grid-noise glass relative rounded-3xl p-6 shadow-deep">
-          <p class="text-xs uppercase tracking-[.18em] text-mint">Panel comercial en vivo</p>
+        <aside class="reveal glass rounded-3xl p-6 shadow-panel">
+          <p class="text-xs uppercase tracking-[0.2em] text-mint">Dashboard inteligente</p>
           <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <div class="rounded-2xl bg-white/10 p-4">
-              <p class="text-xs text-slate-300">Chats respondidos</p>
-              <p class="counter text-3xl font-black text-mint" data-target="1284">0</p>
-            </div>
-            <div class="rounded-2xl bg-white/10 p-4">
-              <p class="text-xs text-slate-300">Citas del mes</p>
-              <p class="counter text-3xl font-black text-mint" data-target="293">0</p>
-            </div>
-            <div class="rounded-2xl bg-white/10 p-4">
-              <p class="text-xs text-slate-300">Leads recuperados</p>
-              <p class="counter text-3xl font-black text-mint" data-target="372">0</p>
-            </div>
-            <div class="rounded-2xl border border-mint/40 bg-mint/10 p-4">
-              <p class="text-xs text-mint">Estado</p>
-              <p class="text-lg font-bold">✅ Sistema activo</p>
-            </div>
+            <div class="rounded-2xl bg-white/10 p-4"><p class="text-xs text-slate-300">Chats atendidos</p><p class="counter text-3xl font-black text-mint" data-target="1530">0</p></div>
+            <div class="rounded-2xl bg-white/10 p-4"><p class="text-xs text-slate-300">Citas cerradas</p><p class="counter text-3xl font-black text-mint" data-target="364">0</p></div>
+            <div class="rounded-2xl bg-white/10 p-4"><p class="text-xs text-slate-300">Leads recuperados</p><p class="counter text-3xl font-black text-mint" data-target="418">0</p></div>
+            <div class="rounded-2xl border border-mint/35 bg-mint/10 p-4"><p class="text-xs text-mint">Estado</p><p class="text-lg font-bold">✅ Operando 24/7</p></div>
           </div>
-          <p class="mt-4 rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-slate-200">
-            Todo en un flujo: captación ➜ clasificación ➜ cita ➜ seguimiento ➜ cierre.
-          </p>
+          <p class="mt-4 rounded-xl border border-white/15 bg-black/25 px-4 py-3 text-sm text-slate-200">Flujo completo: Lead → Calificación → Cita → Seguimiento → Cierre.</p>
         </aside>
       </section>
 
-      <section id="producto" class="reveal mt-16 rounded-3xl border border-white/15 bg-white/5 p-6">
-        <div class="grid gap-4 text-center md:grid-cols-4">
-          <div><p class="text-xs text-slate-300">Tiempo de respuesta</p><p class="font-bold text-mint">segundos, no horas</p></div>
-          <div><p class="text-xs text-slate-300">Conversaciones atendidas</p><p class="font-bold text-mint">24/7 con IA</p></div>
-          <div><p class="text-xs text-slate-300">Seguimiento</p><p class="font-bold text-mint">automático y medible</p></div>
-          <div><p class="text-xs text-slate-300">Implementación</p><p class="font-bold text-mint">3–7 días</p></div>
+      <section id="solucion" class="reveal mt-14 rounded-3xl border border-white/15 bg-white/5 p-6">
+        <div class="grid text-center gap-4 md:grid-cols-4">
+          <div><p class="text-xs text-slate-300">Respuesta</p><p class="font-bold text-mint">en segundos</p></div>
+          <div><p class="text-xs text-slate-300">Atención</p><p class="font-bold text-mint">24/7</p></div>
+          <div><p class="text-xs text-slate-300">No-show</p><p class="font-bold text-mint">-25% a -45%</p></div>
+          <div><p class="text-xs text-slate-300">Tiempo equipo</p><p class="font-bold text-mint">más enfoque en cierre</p></div>
         </div>
       </section>
 
-      <section id="modulos" class="mt-24 space-y-6">
-        <h2 class="reveal text-3xl font-black md:text-4xl">Módulos del sistema</h2>
-        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Inbox IA WhatsApp</h3><p class="mt-2 text-slate-300">Respuestas inteligentes por intención: precios, horarios, ubicación y servicios.</p></article>
-          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Agenda inteligente</h3><p class="mt-2 text-slate-300">Reserva citas por profesional/servicio y manda confirmaciones automáticas.</p></article>
-          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Recordatorios anti no-show</h3><p class="mt-2 text-slate-300">Mensajes previos a la cita para bajar ausencias y reorganizar turnos.</p></article>
-          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Seguimiento de leads</h3><p class="mt-2 text-slate-300">Secuencias de seguimiento a quienes preguntaron y no reservaron.</p></article>
-          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Embudo de ventas</h3><p class="mt-2 text-slate-300">Visualiza cada etapa: nuevo lead, interesado, cita agendada, cierre.</p></article>
-          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Reportes RD$</h3><p class="mt-2 text-slate-300">Métricas semanales y valor estimado generado en pesos dominicanos.</p></article>
-        </div>
-      </section>
-
-      <section id="calculadora" class="mt-24 grid gap-6 lg:grid-cols-2">
-        <div class="reveal rounded-3xl border border-white/15 bg-white/5 p-8">
-          <h2 class="text-3xl font-black">Calculadora de retorno</h2>
-          <p class="mt-2 text-slate-300">Ajusta leads recuperados y ticket promedio para estimar ingresos mensuales.</p>
-          <div class="mt-5 space-y-5">
-            <label class="block">
-              <span class="text-sm text-slate-300">Leads recuperados / mes</span>
-              <input id="leadsRange" type="range" min="10" max="180" value="40" class="mt-2 w-full accent-mint" />
-            </label>
-            <label class="block">
-              <span class="text-sm text-slate-300">Ticket promedio (RD$)</span>
-              <input id="ticketRange" type="range" min="1000" max="10000" step="500" value="2500" class="mt-2 w-full accent-mint" />
-            </label>
+      <section class="mt-14 reveal">
+        <p class="mb-3 text-xs uppercase tracking-[0.18em] text-slate-300">Negocios donde encaja</p>
+        <div class="ticker overflow-hidden rounded-2xl border border-white/10 bg-white/5 py-3">
+          <div class="ticker-track gap-10 px-6 text-sm text-slate-200">
+            <span>Clínicas Estéticas</span><span>Salones & Barbers</span><span>Inmobiliarias</span><span>Consultorios Médicos</span><span>Coaches</span><span>Restaurantes Premium</span>
+            <span>Clínicas Estéticas</span><span>Salones & Barbers</span><span>Inmobiliarias</span><span>Consultorios Médicos</span><span>Coaches</span><span>Restaurantes Premium</span>
           </div>
+        </div>
+      </section>
+
+      <section id="features" class="mt-24 space-y-6">
+        <h2 class="reveal text-3xl font-black md:text-4xl">Todo lo que incluye el sistema</h2>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Inbox IA</h3><p class="mt-2 text-slate-300">Responde preguntas frecuentes y filtra intención de compra.</p></article>
+          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Agenda automática</h3><p class="mt-2 text-slate-300">Citas por servicio/profesional con confirmación instantánea.</p></article>
+          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Recordatorios</h3><p class="mt-2 text-slate-300">Secuencias anti no-show y reprogramación rápida.</p></article>
+          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Seguimiento inteligente</h3><p class="mt-2 text-slate-300">Mensajes automatizados para leads no convertidos.</p></article>
+          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Dashboard comercial</h3><p class="mt-2 text-slate-300">Visualiza resultados de cada fase del embudo.</p></article>
+          <article class="reveal glass rounded-2xl p-6"><h3 class="text-xl font-bold">Reportes en RD$</h3><p class="mt-2 text-slate-300">Métrica semanal y valor potencial generado.</p></article>
+        </div>
+      </section>
+
+      <section id="roi" class="mt-24 grid gap-6 lg:grid-cols-2">
+        <div class="reveal rounded-3xl border border-white/15 bg-white/5 p-8">
+          <h2 class="text-3xl font-black">Calculadora de ROI</h2>
+          <p class="mt-2 text-slate-300">Ajusta leads recuperados y ticket promedio.</p>
+          <label class="mt-5 block text-sm text-slate-300">Leads recuperados/mes
+            <input id="leadsRange" type="range" min="10" max="200" value="50" class="mt-2 w-full accent-mint" />
+          </label>
+          <label class="mt-5 block text-sm text-slate-300">Ticket promedio (RD$)
+            <input id="ticketRange" type="range" min="1000" max="12000" step="500" value="3000" class="mt-2 w-full accent-mint" />
+          </label>
         </div>
         <div class="reveal rounded-3xl border border-mint/35 bg-mint/10 p-8">
-          <h3 class="text-2xl font-black">Resultado estimado</h3>
+          <h3 class="text-2xl font-black">Estimación mensual</h3>
           <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <div class="rounded-xl bg-black/25 p-4 text-center"><p class="text-xs text-slate-300">Leads</p><p id="leadsOut" class="text-2xl font-black text-mint">40</p></div>
-            <div class="rounded-xl bg-black/25 p-4 text-center"><p class="text-xs text-slate-300">Ticket</p><p id="ticketOut" class="text-2xl font-black text-mint">RD$2,500</p></div>
-            <div class="rounded-xl bg-black/25 p-4 text-center sm:col-span-2"><p class="text-xs text-slate-300">Ingreso potencial mensual</p><p id="incomeOut" class="text-4xl font-black text-mint">RD$100,000</p></div>
+            <div class="rounded-xl bg-black/25 p-4 text-center"><p class="text-xs text-slate-300">Leads</p><p id="leadsOut" class="text-2xl font-black text-mint">50</p></div>
+            <div class="rounded-xl bg-black/25 p-4 text-center"><p class="text-xs text-slate-300">Ticket</p><p id="ticketOut" class="text-2xl font-black text-mint">RD$3,000</p></div>
+            <div class="rounded-xl bg-black/25 p-4 text-center sm:col-span-2"><p class="text-xs text-slate-300">Ingreso potencial</p><p id="incomeOut" class="text-4xl font-black text-mint">RD$150,000</p></div>
           </div>
-          <p class="mt-3 text-xs text-slate-200">Estimación referencial para ventas de servicios en RD.</p>
         </div>
       </section>
 
-      <section id="precios" class="mt-24 space-y-6">
-        <h2 class="reveal text-3xl font-black md:text-4xl">Planes comerciales</h2>
+      <section id="pricing" class="mt-24 space-y-6">
+        <h2 class="reveal text-3xl font-black md:text-4xl">Planes y comparación</h2>
         <div class="grid gap-6 md:grid-cols-3">
-          <article class="reveal rounded-2xl border border-white/15 bg-white/5 p-6">
-            <h3 class="text-xl font-black">Starter</h3>
-            <p class="mt-2 text-3xl font-black">RD$3,900<span class="text-sm font-medium text-slate-300">/mes</span></p>
-            <ul class="mt-4 space-y-2 text-slate-300">
-              <li>• 1 flujo principal</li>
-              <li>• FAQ + captación</li>
-              <li>• 1 reporte semanal</li>
-            </ul>
-          </article>
-          <article class="reveal rounded-2xl border border-mint/50 bg-mint/10 p-6 shadow-neon">
-            <p class="text-xs font-bold uppercase text-mint">Recomendado</p>
-            <h3 class="mt-2 text-xl font-black">Growth</h3>
-            <p class="mt-2 text-3xl font-black">RD$6,900<span class="text-sm font-medium text-slate-300">/mes</span></p>
-            <ul class="mt-4 space-y-2 text-slate-100">
-              <li>• Captación + agenda</li>
-              <li>• Recordatorios automáticos</li>
-              <li>• Seguimiento no cerrados</li>
-              <li>• Dashboard completo</li>
-            </ul>
-          </article>
-          <article class="reveal rounded-2xl border border-white/15 bg-white/5 p-6">
-            <h3 class="text-xl font-black">Pro</h3>
-            <p class="mt-2 text-3xl font-black">RD$11,900<span class="text-sm font-medium text-slate-300">/mes</span></p>
-            <ul class="mt-4 space-y-2 text-slate-300">
-              <li>• Multi sucursal</li>
-              <li>• Integración CRM/Pagos</li>
-              <li>• Automatizaciones premium</li>
-            </ul>
-          </article>
+          <article class="reveal rounded-2xl border border-white/15 bg-white/5 p-6"><h3 class="text-xl font-black">Starter</h3><p class="mt-2 text-3xl font-black">RD$3,900<span class="text-sm text-slate-300">/mes</span></p><ul class="mt-4 space-y-2 text-slate-300"><li>• 1 flujo</li><li>• FAQ + captación</li><li>• Soporte base</li></ul></article>
+          <article class="reveal rounded-2xl border border-mint/50 bg-mint/10 p-6 shadow-neon"><p class="text-xs uppercase font-bold text-mint">Más vendido</p><h3 class="mt-2 text-xl font-black">Growth</h3><p class="mt-2 text-3xl font-black">RD$6,900<span class="text-sm text-slate-200">/mes</span></p><ul class="mt-4 space-y-2 text-slate-100"><li>• Captación + agenda</li><li>• Recordatorios</li><li>• Seguimiento</li><li>• Dashboard</li></ul></article>
+          <article class="reveal rounded-2xl border border-white/15 bg-white/5 p-6"><h3 class="text-xl font-black">Pro</h3><p class="mt-2 text-3xl font-black">RD$11,900<span class="text-sm text-slate-300">/mes</span></p><ul class="mt-4 space-y-2 text-slate-300"><li>• Multi-sucursal</li><li>• Integración CRM</li><li>• Automatización avanzada</li></ul></article>
+        </div>
+
+        <div class="reveal overflow-x-auto rounded-2xl border border-white/15 bg-white/5">
+          <table class="min-w-full text-sm">
+            <thead class="bg-black/20 text-slate-200">
+              <tr>
+                <th class="px-4 py-3 text-left">Feature</th>
+                <th class="px-4 py-3 text-left">Starter</th>
+                <th class="px-4 py-3 text-left">Growth</th>
+                <th class="px-4 py-3 text-left">Pro</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-300">
+              <tr class="border-t border-white/10"><td class="px-4 py-3">Agenda automática</td><td class="px-4 py-3">—</td><td class="px-4 py-3">✅</td><td class="px-4 py-3">✅</td></tr>
+              <tr class="border-t border-white/10"><td class="px-4 py-3">Seguimiento leads</td><td class="px-4 py-3">—</td><td class="px-4 py-3">✅</td><td class="px-4 py-3">✅</td></tr>
+              <tr class="border-t border-white/10"><td class="px-4 py-3">Multi-sucursal</td><td class="px-4 py-3">—</td><td class="px-4 py-3">—</td><td class="px-4 py-3">✅</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <section class="mt-24 space-y-5">
-        <h2 class="reveal text-3xl font-black md:text-4xl">Nicho por nicho</h2>
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <div class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><h3 class="font-bold">Clínicas estéticas</h3><p class="mt-2 text-sm text-slate-300">Evaluación automática y reserva inmediata.</p></div>
-          <div class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><h3 class="font-bold">Salones/Barbers</h3><p class="mt-2 text-sm text-slate-300">Agenda por servicio y disponibilidad real.</p></div>
-          <div class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><h3 class="font-bold">Inmobiliarias</h3><p class="mt-2 text-sm text-slate-300">Califica leads y agenda visitas.</p></div>
-          <div class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><h3 class="font-bold">Consultorios</h3><p class="mt-2 text-sm text-slate-300">Confirmaciones y reprogramación simple.</p></div>
+      <section class="mt-24 space-y-4">
+        <h2 class="reveal text-3xl font-black md:text-4xl">Testimonios rápidos</h2>
+        <div id="testimonial" class="reveal rounded-2xl border border-white/15 bg-white/5 p-6">
+          <p id="testimonialText" class="text-lg text-slate-100">“En dos semanas bajamos los no-show y llenamos más huecos de agenda.”</p>
+          <p id="testimonialAuthor" class="mt-3 text-sm text-mint">— Clínica Estética, Santo Domingo</p>
         </div>
       </section>
 
       <section id="faq" class="mt-24 space-y-4">
-        <h2 class="reveal text-3xl font-black md:text-4xl">FAQ</h2>
-        <details class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><summary class="cursor-pointer font-bold">¿Cuándo veo resultados?</summary><p class="mt-3 text-slate-300">Generalmente en la primera semana ya se ve mejora en respuesta y reservas.</p></details>
-        <details class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><summary class="cursor-pointer font-bold">¿Puedo iniciar con prueba?</summary><p class="mt-3 text-slate-300">Sí, 7 días estratégicos con objetivos y medición de resultados.</p></details>
-        <details class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><summary class="cursor-pointer font-bold">¿Necesito equipo técnico?</summary><p class="mt-3 text-slate-300">No. Nosotros configuramos y entrenamos el sistema para tu equipo.</p></details>
+        <h2 class="reveal text-3xl font-black md:text-4xl">Preguntas frecuentes</h2>
+        <details class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><summary class="cursor-pointer font-bold">¿Cuándo se ven resultados?</summary><p class="mt-3 text-slate-300">Normalmente en la primera semana ya se nota mejora en respuesta y conversión.</p></details>
+        <details class="reveal rounded-2xl border border-white/15 bg-white/5 p-5"><summary class="cursor-pointer font-bold">¿Incluye prueba?</summary><p class="mt-3 text-slate-300">Sí, 7 días estratégicos con objetivos definidos.</p></details>
       </section>
 
       <section id="contacto" class="reveal mt-24 rounded-3xl border border-mint/40 bg-mint/10 p-8 text-center">
-        <h2 class="text-3xl font-black">¿Lanzamos tu sistema esta semana?</h2>
-        <p class="mx-auto mt-2 max-w-2xl text-slate-100">Te mostramos la demo, definimos objetivos y lo dejamos funcionando en pocos días.</p>
+        <h2 class="text-3xl font-black">Seguimos con las ediciones ✅</h2>
+        <p class="mx-auto mt-2 max-w-2xl text-slate-100">Si te gusta esta dirección, el próximo paso es personalizarla con tu marca y número real de WhatsApp.</p>
         <div class="mt-6 flex flex-wrap justify-center gap-3">
-          <a href="https://wa.me/18090000000" class="rounded-full bg-mint px-8 py-3 font-black text-black transition hover:scale-105">Hablar por WhatsApp</a>
-          <a href="#precios" class="rounded-full border border-white/30 px-8 py-3 font-semibold hover:border-mint hover:text-mint">Comparar planes</a>
+          <a href="https://wa.me/18090000000" class="rounded-full bg-mint px-8 py-3 font-black text-black hover:scale-105 transition">Hablar por WhatsApp</a>
+          <a href="#pricing" class="rounded-full border border-white/30 px-8 py-3 font-semibold hover:border-mint hover:text-mint transition">Ver pricing</a>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-white/10 py-6 text-center text-sm text-slate-400">© 2026 FlowRD AI · Automatización comercial para República Dominicana.</footer>
+    <footer class="border-t border-white/10 py-6 text-center text-sm text-slate-400">© 2026 FlowRD AI · Diseñado para República Dominicana.</footer>
 
-    <a href="#contacto" class="fixed bottom-5 right-5 rounded-full bg-mint px-5 py-3 text-sm font-black text-black shadow-neon transition hover:scale-105">Demo ahora</a>
+    <a href="#contacto" class="fixed bottom-5 right-5 rounded-full bg-mint px-5 py-3 text-sm font-black text-black shadow-neon hover:scale-105 transition">Demo ahora</a>
 
     <script>
       const revealEls = document.querySelectorAll('.reveal');
@@ -307,7 +273,7 @@
             animateCounter(entry.target);
           }
         });
-      }, { threshold: 0.5 });
+      }, { threshold: 0.45 });
       counters.forEach((c) => counterObs.observe(c));
 
       const leadsRange = document.getElementById('leadsRange');
@@ -315,7 +281,6 @@
       const leadsOut = document.getElementById('leadsOut');
       const ticketOut = document.getElementById('ticketOut');
       const incomeOut = document.getElementById('incomeOut');
-
       const formatDOP = (num) => new Intl.NumberFormat('es-DO').format(num);
       const updateCalc = () => {
         const leads = Number(leadsRange.value);
@@ -328,6 +293,29 @@
       leadsRange.addEventListener('input', updateCalc);
       ticketRange.addEventListener('input', updateCalc);
       updateCalc();
+
+      const testimonials = [
+        {
+          text: '“En dos semanas bajamos los no-show y llenamos más huecos de agenda.”',
+          author: '— Clínica Estética, Santo Domingo',
+        },
+        {
+          text: '“Ahora respondemos en segundos y no perdemos leads de Instagram.”',
+          author: '— Barbería Premium, Santiago',
+        },
+        {
+          text: '“El seguimiento automático nos ayudó a cerrar más visitas a propiedades.”',
+          author: '— Inmobiliaria, Distrito Nacional',
+        },
+      ];
+      const testimonialText = document.getElementById('testimonialText');
+      const testimonialAuthor = document.getElementById('testimonialAuthor');
+      let idx = 0;
+      setInterval(() => {
+        idx = (idx + 1) % testimonials.length;
+        testimonialText.textContent = testimonials[idx].text;
+        testimonialAuthor.textContent = testimonials[idx].author;
+      }, 3500);
     </script>
   </body>
 </html>
