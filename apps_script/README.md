@@ -42,3 +42,8 @@ curl -X POST "TU_URL_EXEC" \
 ```
 
 Si responde `ok: true`, ya quedó listo.
+
+
+## Nota sobre CORS (importante)
+Si ves en la landing el mensaje de confirmación limitada, puede ser CORS del navegador contra Apps Script.
+En ese caso revisa Google Sheet: si la fila se guardó, el envío fue exitoso.
