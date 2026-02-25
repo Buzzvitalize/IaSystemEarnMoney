@@ -31,3 +31,9 @@ Si `sheetsWebhookUrl` sigue con `TU_SCRIPT_ID`, el formulario igual guarda en `l
 2. Publicar Apps Script Web App y pegar URL real en `sheetsWebhookUrl`.
 3. Probar alta end-to-end: formulario → Sheets (`status=nuevo`) → WhatsApp prellenado.
 4. Iniciar outreach el mismo día con tracking UTM (`utm_source`, `utm_medium`, `utm_campaign`).
+
+
+## Sin dominio / sin Calendly (modo rápido)
+- Puedes operar sin dominio (usa URL temporal del hosting).
+- Si no tienes Calendly, deja `calendlyUrl` vacío (`''`) y la landing usará WhatsApp directo.
+- Cuando tengas Calendly, solo actualiza `CONFIG.calendlyUrl`.
