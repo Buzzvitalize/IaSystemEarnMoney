@@ -141,7 +141,7 @@
         emailNotify: 'ventas@flowrd.ai',
       };
       // Opcional: sobreescribe sin editar el código fuente
-      // Ejemplo inline seguro: <script>window.__FLOWRD_CONFIG__ = { whatsappNumber:'1809...', calendlyUrl:'https://...', sheetsWebhookUrl:'https://...', emailNotify:'...' };<\/script>
+      // <script>window.__FLOWRD_CONFIG__ = { whatsappNumber:'1809...', calendlyUrl:'https://...', sheetsWebhookUrl:'https://...', emailNotify:'...' };</script>
       const CONFIG = { ...DEFAULT_CONFIG, ...(window.__FLOWRD_CONFIG__ || {}) };
 
       const i18n = {
