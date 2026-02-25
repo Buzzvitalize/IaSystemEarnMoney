@@ -7,8 +7,11 @@
 
 ## 2) Vincular hoja
 1. Crea un Google Sheet.
-2. En Apps Script: **Archivo > Configuración del proyecto > Vincular hoja de cálculo** (o ejecuta y luego abre la hoja desde el script).
-3. Asegúrate de tener/crear la pestaña `Leads`.
+2. Opción A (recomendada): copia el **Spreadsheet ID** y pégalo en `SPREADSHEET_ID` dentro de `Code.gs`.
+3. Opción B: en Apps Script: **Archivo > Configuración del proyecto > Vincular hoja de cálculo**.
+4. Asegúrate de tener/crear la pestaña `Leads`.
+
+> Si usaste `script.new` (proyecto standalone), la opción A evita el error clásico de `getActiveSpreadsheet()` nulo.
 
 ## 3) Publicar Web App
 1. **Implementar > Nueva implementación**.
@@ -42,6 +45,13 @@ curl -X POST "TU_URL_EXEC" \
 ```
 
 Si responde `ok: true`, ya quedó listo.
+
+## 6) Si falla con “Lead capturado localmente…”
+1. Abre la URL `/exec` en el navegador. Debe responder JSON con `ok: true`.
+2. En Apps Script, ejecuta **Deploy > Manage deployments > Edit > New version > Deploy** (cada cambio requiere nueva versión).
+3. Verifica que el deployment esté como **Web app** con acceso **Anyone with the link**.
+4. Revisa **Executions** en Apps Script para ver el error exacto del último POST.
+5. Confirma que `SPREADSHEET_ID` sea del archivo correcto y que tu cuenta tenga permisos de edición.
 
 
 ## Nota sobre CORS (importante)

@@ -6,13 +6,16 @@
  */
 
 const SHEET_NAME = 'Leads';
+// Recomendado para proyectos standalone (script.new): pega aquí el ID de tu Google Sheet.
+// Si lo dejas vacío, se intentará usar la hoja vinculada (container-bound).
+const SPREADSHEET_ID = '';
 
 function doPost(e) {
   try {
     const raw = e && e.postData && e.postData.contents ? e.postData.contents : '{}';
     const body = JSON.parse(raw);
 
-    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    const ss = getSpreadsheet();
     const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
 
     if (sheet.getLastRow() === 0) {
@@ -74,7 +77,34 @@ function doPost(e) {
 }
 
 function doGet() {
-  return jsonResponse(200, { ok: true, message: 'Webhook FlowRD activo' });
+  try {
+    const ss = getSpreadsheet();
+    return jsonResponse(200, {
+      ok: true,
+      message: 'Webhook FlowRD activo',
+      spreadsheetId: ss.getId(),
+      spreadsheetName: ss.getName(),
+      sheetName: SHEET_NAME,
+    });
+  } catch (err) {
+    return jsonResponse(500, {
+      ok: false,
+      message: 'Webhook FlowRD sin acceso a hoja',
+      error: String(err),
+    });
+  }
+}
+
+function getSpreadsheet() {
+  if (SPREADSHEET_ID) {
+    return SpreadsheetApp.openById(SPREADSHEET_ID);
+  }
+
+  const active = SpreadsheetApp.getActiveSpreadsheet();
+  if (!active) {
+    throw new Error('No hay hoja activa. Define SPREADSHEET_ID o vincula el proyecto a un Google Sheet.');
+  }
+  return active;
 }
 
 function jsonResponse(statusCode, payload) {
